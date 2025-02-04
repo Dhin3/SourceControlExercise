@@ -1,4 +1,4 @@
-const arr = [
+const users = [
     {
         "name":"Bruno",
         "profile":"./assets/images/bruno.jpg",
@@ -19,4 +19,7 @@ const arr = [
     }
 ]
 
-document.getElementById("chat-list").innerHTML="<h1>hi</h1>"
+users.forEach((user, index) => {
+    document.getElementById("chat-list").innerHTML="<h1>hi</h1>"
+  });
+
