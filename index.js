@@ -34,11 +34,26 @@ function openChat(index) {
 }
 
 function sendChat(){
-    var message = document.getElementById("typed-text").value;
-    var innerhtml = '<div class="message-cont"><p class="message">'+ message +'</p><p class="time">'+ new Date().getHours() + ':' + new Date().getMinutes() +'</p></div>'
-    document.getElementById("msg-screen").innerHTML += innerhtml
-    document.getElementById("typed-text").value = ""
+    sendMsg(message)
 }
+
+function sendMsg(message){
+    var message = document.getElementById("typed-text").value;
+    if (message){
+        var innerhtml = '<div class="message-cont"><p class="message">'+ message +'</p><p class="time">'+ new Date().getHours() + ':' + new Date().getMinutes() +'</p></div>'
+        document.getElementById("msg-screen").innerHTML += innerhtml
+        document.getElementById("typed-text").value = ""
+    }
+}
+
+
 const date = new Date();
 const options = { day: '2-digit', month: 'short', year: 'numeric' };
 document.getElementById("date").textContent = date.toLocaleDateString('en-US', options);
+
+document.getElementById("typed-text").addEventListener("keypress", function (event){
+    if (event.key == "Enter"){
+        var message = document.getElementById("typed-text").textContent
+        sendMsg(message)
+    }
+})

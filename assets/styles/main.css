@@ -131,4 +131,15 @@ input {
 .main-cont .chat .msg-screen .message-cont .time {
   font-size: 10px;
   text-align: end;
+}
+.main-cont .chat .msg-screen #msg-screen {
+  width: 100%;
+  height: 80vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.main-cont .chat .msg-screen #msg-screen::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 }/*# sourceMappingURL=main.css.map */
